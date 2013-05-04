@@ -193,6 +193,8 @@ var timer = $.timer(function() {
 $('#play').click(function () {
     if ($('#play').val() == "Play") {
         $('#play').val("Pause");
+        //So we will not pause long on the currentframe:
+        specialframecounter = parseInt($('#PauseSpecialFrameAmount').val(),10)+100; 
         if (currentFrame >= (imageslen - 1)) {
             updateAll(1);
         }
